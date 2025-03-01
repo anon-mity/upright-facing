@@ -3,12 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="CAP: Learning 3D Canonical Shape Representations Aligned with Human
-        Preferences">
-  <meta name="keywords" content="Aligning with Human Preference,Point Cloud Canonicalization;">
+        content="Learning Upright and Forward-Facing Object Poses using Category-level Canonical Representations">
+  <!-- <meta name="keywords" content="Aligning with Human Preference,Point Cloud Canonicalization;"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CAP: Learning 3D Canonical Shape Representations Aligned with Human
-    Preferences</title>
+  <title>Learning Upright and Forward-Facing Object Poses using Category-level Canonical Representations</title>
 
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -44,8 +42,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CAP: Learning 3D Canonical Shape Representations Aligned with Human
-            Preferences</h1>
+          <h1 class="title is-1 publication-title">Learning Upright and Forward-Facing Object Poses using Category-level Canonical Representations</h1>
             
 
           <div class="is-size-5 publication-authors">
@@ -87,17 +84,6 @@
                   <span style="font-size: small; margin-left: 5px;">(coming soon)</span>
                   </a>
               </span>
-
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://github.com/anonymity15333/CAP/blob/main/Supplementary%20Material.pdf"
-                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Supplementary Material</span>
-                </a>
-              </span>
               
             </div>
           </div>
@@ -129,7 +115,7 @@
     <div class="hero-body">
       <img id="teaser-image" src="./static/images/img1.png" alt="Nerfies teaser" height="100%">
       <p class="content has-text-justified">
-      <strong> TL;DR: </strong> A human-centric category-level point cloud canonicalization method that achieves SOTA consistency and aligns with human preferences. It exhibits improved physical significance, thereby driving numerous downstream tasks.
+      <strong> TL;DR: </strong> We propose a category-level point cloud canonicalization method that learns a unified canonical pose across different instances within the same category.
       </p>
     </div>
   </div>
@@ -203,15 +189,19 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Learning to predict the canonical shape representation of 3D objects is a crucial yet challenging task, 
-            as objects within the same category may exhibit significant variations. Meanwhile, previous canonical 
-            representations often significantly deviate from human preferences. 
+            Constructing a unified canonical pose representation for 3D object categories is crucial for pose estimation and robotic scene understanding. 
+            Previous unified pose representations often relied on manual alignment, such as in ShapeNet and ModelNet.  Recently, self-supervised canonicalization methods have been proposed, 
+            However, they are sensitive to intra-class shape variations, and their canonical pose representations cannot be aligned to a coordinate system centered on the object.
+            
           </p>
           <p>
-            To achieve improved representation, we propose CAP, a human-centric, category-level point cloud canonicalization method that mitigates the impact of intra-category variations and aligns with human preferences. First, we design a Siamese Vector Neuron Module (SVNM), which enables SE(3) equivariant modeling and self-supervised disentanglement of shape and pose attributes. Next, we introduce an equivariant constraint to mitigate pose alignment biases caused by intra-category variations, thereby enhancing the consistency of the canonical representation. Unlike previous works, we introduce an upright dataset aligned with human preferences. By embedding real-world kinematic and geometric constraints, we learn residual rotations that align the neutral canonical representations with human preferences. 
+           In this paper, we propose a category-level canonicalization method that alleviates the impact of shape variation and extends the canonical pose representation to an upright and forward-facing state. 
+            First, we design a Siamese VN Module (SVNM) that achieves SE(3) equivariance modeling and self-supervised disentangling of 3D shape and pose attributes.    
+            Next, we introduce a Siamese equivariant constraint that addresses the pose alignment bias caused by shape deformation. 
+            Finally, we propose a method to generate upright surface labels from pose-unknown in-the-wild data and use upright and symmetry losses to correct the canonical pose.  
           </p>
           <p>
-            Experimental results demonstrate that CAP not only achieves SOTA consistency but also exhibits stronger physical interpretability, facilitating numerous downstream applications. 
+           Experimental results show that our method not only achieves SOTA consistency performance but also aligns with the object-centered coordinate system.
           </p>
         </div>
       </div>
@@ -238,13 +228,26 @@
     <div class="hero-body">
       <img id="teaser-image" src="./static/images/img2.png" alt="Nerfies teaser" height="100%">
       <p class="content has-text-justified">
-      <strong> Overall architecture of CAP. </strong>  \(X \rightarrow \widetilde{X}\): Learning neutral canonical shape representations of point clouds with arbitrary input poses. 
-      \(\widetilde{X} \rightarrow \widehat{X}\): Learning residual rotations to align the canonical shape representations with human preferences.
+      <strong> Overall architecture. </strong>  \(X \rightarrow \widetilde{X}\): Learning neutral canonical representations of point clouds with arbitrary input poses. 
+      \(\widetilde{X} \rightarrow \widehat{X}\): Learning residual rotations to align the canonical pose to the upright and forward-facing state.
       </p>
     </div>
   </div>
 </section>
 
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="text-align: center;">Data Generation</h2>
+    <div class="hero-body">
+      <img id="teaser-image" src="./static/images/img2.png" alt="Nerfies teaser" height="100%">
+      <p class="content has-text-justified">
+      <strong> Overall architecture. </strong>  \(X \rightarrow \widetilde{X}\): Learning neutral canonical representations of point clouds with arbitrary input poses. 
+      \(\widetilde{X} \rightarrow \widehat{X}\): Learning residual rotations to align the canonical pose to the upright and forward-facing state.
+      </p>
+    </div>
+  </div>
+</section>
+  
 
 
 <section class="hero teaser">
