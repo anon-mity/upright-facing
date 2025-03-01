@@ -230,14 +230,33 @@
   </div>
 </section>
 
-  <section class="hero teaser">
+<section class="hero teaser">
   <div class="container is-max-desktop">
-    <h2 class="title is-3" style="text-align: center;">Data Generation</h2>
-    <div class="hero-body">
-      <img id="teaser-image" src="./static/images/Data_Generation.mp4" alt="Generation" height="100%" type="video/mp4">
-      <p class="content has-text-justified">
-      We present an upright dataset com-prising 34K objects and 153.4K support surface labels.
-      </p>
+    <!-- 标题 -->
+    <h2 class="title is-3 has-text-centered mb-5">Data Generation</h2>
+    
+    <div class="hero-body p-0">
+      <!-- 视频容器 -->
+      <figure class="image is-16by9">
+        <video 
+          class="has-ratio" 
+          controls 
+          autoplay 
+          loop 
+          muted
+          style="border-radius: 6px; background: #f5f5f5"
+        >
+          <source src="./static/images/Data_Generation.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </figure>
+
+      <!-- 描述文本 -->
+      <div class="content has-text-centered mt-4" style="max-width: 800px; margin: 0 auto">
+        <p class="is-size-5">
+          We present an upright dataset comprising 34K objects and 153.4K support surface labels.
+        </p>
+      </div>
     </div>
   </div>
 </section>
