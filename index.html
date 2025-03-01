@@ -239,10 +239,9 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3" style="text-align: center;">Data Generation</h2>
     <div class="hero-body">
-      <img id="teaser-image" src="./static/images/Data_Generation.png" alt="Nerfies teaser" height="100%">
+      <img id="teaser-image" src="./static/images/Data_Generation.png" alt="Generation" height="100%" type="video/mp4">
       <p class="content has-text-justified">
-      <strong> Overall architecture. </strong>  \(X \rightarrow \widetilde{X}\): Learning neutral canonical representations of point clouds with arbitrary input poses. 
-      \(\widetilde{X} \rightarrow \widehat{X}\): Learning residual rotations to align the canonical pose to the upright and forward-facing state.
+      We present an upright dataset com-prising 34K objects and 153.4K support surface labels.
       </p>
     </div>
   </div>
@@ -431,22 +430,39 @@
   </div>
 </section>
 
-
-<!--
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="text-align: center;">Robot Placement Task</h2>
+    <hr>
+    <div class="columns">
+      <div class="column is-half has-text-centered">First-Person View</div>
+      <div class="column is-half has-text-centered">Third-Person View</div>
+    </div>
+    <!-- 视频行（一行两列） -->
+    <div class="columns is-multiline">
+      <!-- 视频组 1 -->
+      <div class="column is-half">
+        <figure class="image">
+          <video controls autoplay loop muted style="max-height: 400px">
+            <source src="./static/images/3d_robo.mp4" type="video/mp4">
+          </video>
+          <figcaption class="has-text-centered">Input with pose variations</figcaption>
+        </figure>
+      </div>
+      <div class="column is-half">
+        <figure class="image">
+          <video controls autoplay loop muted style="max-height: 400px">
+            <source src="./static/images/robo.mp4" type="video/mp4">
+          </video>
+          <figcaption class="has-text-centered">Our Processed Output</figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
-</section>-->
+</section>
 
-
+  
+<!--
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
